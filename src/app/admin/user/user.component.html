@@ -1,0 +1,21 @@
+<div class="___header">
+  <app-header></app-header>
+</div>
+<div class="___main">
+  <div class="___sidebar">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="___body">
+    <div class="___body__content">
+      <wts-scroll #customScrollBar [options]="options">
+        <div #wtsScrollContainer class="_space">
+          <router-outlet></router-outlet>
+        </div>
+      </wts-scroll>
+    </div>
+    <div class="___footer">
+      <app-footer></app-footer>
+    </div>
+  </div>
+
+</div>

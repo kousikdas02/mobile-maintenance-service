@@ -1,0 +1,152 @@
+<div class="homeBanner">
+  <div class="homeBanner_top_wrap">
+    <div class="homeBanner_top">
+      <div class="container">
+        <h1>Mobile Maintenance Services</h1>
+      </div>
+    </div>
+  </div>
+  <div class="homeBanner_bot">
+    <div class="container">
+      <div class="homeBanner_bot_inner"
+        style="background: url(assets/images/home-banner.jpg) no-repeat center center; background-size: cover;">
+        <div class="row homeBanner_bot_row">
+          <div class="col-lg-5 homeBanner_bot_col">
+            <div class="homeBanner_appoinment">
+              <h3>Book An Appoinment</h3>
+
+              <div class="homeBanner_appoinment_form">
+                <form class="appoinmentForm">
+                  <h4>Vehicle Info</h4>
+                  <div class="row appoinmentForm_row">
+                    <div class="col-lg-6 appoinmentForm_col">
+                      <mat-form-field [style.width.%]="100" appearance="outline">
+                        <mat-label>Year</mat-label>
+                        <mat-select>
+                          @for (year of years; track years) {
+                          <mat-option [value]="year.value">{{year.viewValue}}</mat-option>
+                          }
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+                    <div class="col-lg-6 appoinmentForm_col">
+                      <mat-form-field [style.width.%]="100" appearance="outline">
+                        <mat-label>Manufacturer</mat-label>
+                        <mat-select>
+                          @for (manufacturer of manufacturers; track manufacturers) {
+                          <mat-option [value]="manufacturer.value">{{manufacturer.viewValue}}</mat-option>
+                          }
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+                    <div class="col-lg-6 appoinmentForm_col">
+                      <mat-form-field [style.width.%]="100" appearance="outline">
+                        <mat-label>Model</mat-label>
+                        <mat-select>
+                          @for (model of models; track models) {
+                          <mat-option [value]="model.value">{{model.viewValue}}</mat-option>
+                          }
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+                    <div class="col-lg-6 appoinmentForm_col">
+                      <mat-form-field [style.width.%]="100" appearance="outline">
+                        <mat-label>Engine</mat-label>
+                        <mat-select>
+                          @for (engine of engines; track engines) {
+                          <mat-option [value]="engine.value">{{engine.viewValue}}</mat-option>
+                          }
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+                    <div class="col-lg-12 appoinmentForm_col">
+                      <button type="submit" class="cmn_btn appoinmentSubmit_btn">Make Appoinment</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-7 homeBanner_bot_col">
+            <div class="homeBanner_info">
+              <h2>Currently serving the <br> city of atlanta and cobb county.</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="featuredService cmn_gap">
+  <div class="container">
+    <div class="featuredService_inner">
+      <div class="cmn_head">
+        <h2>Featured Services</h2>
+      </div>
+      <div class="featuredService_slider">
+        <ngx-slick-carousel class="carousel" [config]="slideConfig">
+          @for (slide of slides; track slide.img) {
+          <div ngxSlickItem class="slide">
+            <app-service-card serviceImg="{{ slide.img }}" serviceTitle="{{slide.serviceName}}"></app-service-card>
+          </div>
+          }
+        </ngx-slick-carousel>
+      </div>
+      <div class="viewService_btnWrap">
+        <a href="/services" class="cmn_btn">View All Services</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="homeContact cmn_gap pt-0">
+  <div class="container">
+    <div class="homeContact_inner">
+      <div class="cmn_head">
+        <h2>Contact Us</h2>
+        <p>
+          Complete the form below if you need any help or <br> if you have any questions and someone on our team will
+          get back to you.
+        </p>
+      </div>
+      <div class="homeContact_form_wrap">
+        <form class="homeContact_form">
+          <div class="row homeContactForm_row">
+            <div class="col-lg-6 homeContactForm_col">
+              <mat-form-field class="homeContactForm_field" appearance="outline">
+                <mat-label>First Name</mat-label>
+                <input matInput placeholder="First Name">
+              </mat-form-field>
+            </div>
+            <div class="col-lg-6 homeContactForm_col">
+              <mat-form-field class="homeContactForm_field" appearance="outline">
+                <mat-label>Last Name</mat-label>
+                <input matInput placeholder="Last Name">
+              </mat-form-field>
+            </div>
+            <div class="col-lg-12 homeContactForm_col">
+              <mat-form-field class="homeContactForm_field" appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Email">
+              </mat-form-field>
+            </div>
+            <div class="col-lg-12 homeContactForm_col">
+              <mat-form-field class="homeContactForm_field" appearance="outline">
+                <mat-label>Message</mat-label>
+                <textarea matInput placeholder="Message"></textarea>
+              </mat-form-field>
+            </div>
+            <div class="col-lg-12 homeContactForm_col">
+              <div class="homeContact_submitWrap">
+                <button type="submit" class="cmn_btn">Submit</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

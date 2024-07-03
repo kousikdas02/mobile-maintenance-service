@@ -1,0 +1,452 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+@import "./custom-palettes.scss";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$angular-latest-primary: mat.define-palette($primary-custom);
+$angular-latest-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$angular-latest-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$angular-latest-theme: mat.define-light-theme((
+  color: (
+    primary: $angular-latest-primary,
+    accent: $angular-latest-accent,
+    warn: $angular-latest-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($angular-latest-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+// upbolters font
+@font-face {
+  font-family: 'upboltersregular';
+  src: url('assets/fonts/upbolters-webfont.eot');
+  src: url('assets/fonts/upbolters-webfont.eot?#iefix') format('embedded-opentype'),
+       url('assets/fonts/upbolters-webfont.woff2') format('woff2'),
+       url('assets/fonts/upbolters-webfont.woff') format('woff'),
+       url('assets/fonts/upbolters-webfont.ttf') format('truetype'),
+       url('assets/fonts/upbolters-webfont.svg#upboltersregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+:root {
+  --primary-color: rgb(166, 15, 35);
+  --black: #000;
+  --white: #fff;
+  --btn-hover: rgb(114, 1, 22);
+}
+* {
+  box-sizing: border-box;
+}
+
+html, body { height: 100%; }
+body { 
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif; 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: #fff;
+  color: #000;
+}
+
+
+p {
+  margin: 0 0 20px 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 25px 0;
+  padding: 0;
+  color: #000;
+  font-weight: normal;
+  font-family: 'upboltersregular';
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+h1 {
+  font-size: 65px;
+  line-height: 1.2;
+
+  @media (max-width: 1199px) {
+    font-size: 50px;
+    line-height: 1.2;
+  }
+
+  @media (max-width: 991px) {
+    font-size: 40px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 28px;
+  }
+}
+
+h2 {
+  font-size: 40px;
+  line-height: 1.2;
+
+  @media (max-width: 1199px) {
+    font-size: 40px;
+    line-height: 1.2;
+  }
+
+  @media (max-width: 991px) {
+    font-size: 30px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 24px;
+  }
+}
+
+h3 {
+  font-size: 30px;
+  line-height: 1.2;
+
+  @media (max-width: 1199px) {
+    font-size: 35px;
+    line-height: 1;
+  }
+
+  @media (max-width: 991px) {
+    font-size: 26px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 22px;
+  }
+}
+
+h4 {
+  font-size: 24px;
+  line-height: 1.2;
+
+  @media (max-width: 1199px) {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 18px;
+  }
+
+}
+
+h5 {
+  font-size: 20px;
+  line-height: 1.2;
+
+  @media (max-width: 1199px) {
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 16px;
+  }
+
+}
+
+
+a {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  display: inline-block;
+  color: var(--primary-color);
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+  color: #000;
+}
+
+button {
+  border: 0;
+  transition: 0.3s all ease;
+  cursor: pointer;
+  font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+
+
+img {
+  max-width: 100%;
+}
+
+
+// input styles
+input[type="text"],
+input[type="tel"],
+input[type="password"],
+input[type="email"],
+select {
+  background-color: transparent;
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  color: #000;
+
+  height: 72px;
+  // padding: 15px 22px;
+  outline: none !important;
+  font-size: 16px;
+  border-radius: 0;
+  border: 1px solid #A0BAE0;
+  font-family: Roboto, "Helvetica Neue", sans-serif; 
+
+
+  &.error {
+    border-color: #ff0000 !important;
+  }
+
+  @media screen {}
+
+  @media (max-width: 767px) {
+    height: 60px;
+  }
+}
+
+textarea {
+  background-color: transparent;
+  -webkit-appearance: none;
+  appearance: none;
+  padding: 26px 21px;
+  width: 100%;
+  color: #000;
+  height: 190px;
+  outline: none;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid #A0BAE0;
+  resize: none;
+  font-family: Roboto, "Helvetica Neue", sans-serif; 
+
+  &.error {
+    border-color: #ff0000 !important;
+  }
+}
+
+select {
+  border: 1px solid #A0BAE0;
+  width: 100%;
+  padding: 0 11px;
+  // background: url(../src/assets/images/contact_select_arw.svg) no-repeat calc(100% - 16px) center transparent;
+  background-size: 18px;
+  padding-right: 40px;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+input[type="submit"] {
+  background: var(--primary-color);
+  color: #fff;
+  height: 47px;
+  border: none;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  border-radius: 50px;
+  // padding-left: 24px;
+  // padding-right: 24px;
+  padding-left: 28px;
+  padding-right: 28px;
+  border: 1px solid var(--primary-color);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none !important;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+
+input[type="submit"]:hover {
+  background: #fff;
+  color: var(--primary-color);
+}
+
+::-webkit-input-placeholder {
+  opacity: 1;
+  color: #8388A0;
+}
+
+:-ms-input-placeholder {
+  opacity: 1;
+  color: #8388A0;
+}
+
+::-moz-placeholder {
+  opacity: 1;
+  color: #8388A0;
+}
+
+:-moz-placeholder {
+  opacity: 1;
+  color: #8388A0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+
+.text-center {
+  text-align: center;
+}
+
+figure {
+  margin: 0;
+}
+
+// common style
+.cmn_btn{
+  background: var(--primary-color);
+  color: #fff;
+  padding: 15px 25px;
+  font-size: 16px;
+  font-weight: 500;
+
+  &:hover{
+    background: var(--btn-hover);
+    color: var(--white);
+  }
+}
+
+.cmn_gap{
+  padding: 60px 0;
+}
+
+.cmn_head{
+  margin-bottom: 30px;
+  h2{
+    text-align: center;
+    font-family: 'upboltersregular';
+    font-weight: normal;
+    margin-bottom: 5px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  p{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+  }
+}
+
+// slick global style
+.slick-prev:before, .slick-next:before{
+  color: var(--primary-color);
+  font-size: 30px;
+}
+.slick-prev, .slick-next{
+  height: 30px;
+  width: 30px;
+}
+.slick-prev {
+  left: -50px;
+}
+.slick-next {
+  right: -50px;
+}
+
+.featuredService_slider{
+  .slick-slider{
+    display: flex;
+  }
+  .slick-slide{
+    padding: 15px 15px;
+    height: auto;
+    
+  }
+  .slick-list {
+    margin: 0 -15px;
+  }
+  .slick-track{
+    display: flex !important;
+    
+  }
+
+
+}
+
+
+// auth forms
+.authForm_field{
+  width: 100%;
+}
+
+.authSubmit_btn{
+  text-align: center;
+  .cmn_btn{
+    min-width: 150px;
+  }
+}
+
+.rem_for{
+  .mdc-switch__ripple{
+    display: none;
+  }
+}
+
+.termsCheckbox_wrap{
+  .mdc-checkbox__ripple{
+    display: none;
+  }
+}

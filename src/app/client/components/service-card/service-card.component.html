@@ -1,0 +1,11 @@
+<div class="serviceCard">
+    <figure>
+        <img src="{{serviceImg}}" alt="">
+    </figure>
+    <h4>{{serviceTitle}}</h4>
+    <div class="serviceCard_description" *ngIf="hasDescription">
+        <p>
+            {{serviceDescription}}
+        </p>
+    </div>
+</div>

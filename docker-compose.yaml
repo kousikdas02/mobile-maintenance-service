@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+  #Angular
+
+  node:
+    image: webskittersdocker/node18:latest
+
+    container_name: ourprojectname-SSR
+
+    restart: unless-stopped
+
+    working_dir: /home/wtsadmin/myapp
+
+    environment:
+      - NODE_ENV=production
+
+    volumes:
+      - ./:/home/wtsadmin/myapp
+
+    ports:
+      - "5012:5012"
+    command: >
+      sh -c "npm run build &&
+             npm run serve:ssr:yourprojectname"
+
+#Docker Networks
+
+networks:
+  default:
+    external:
+      name: webskitters

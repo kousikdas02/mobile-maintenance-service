@@ -1,0 +1,19 @@
+<app-inner-banner [innerBannerHeading]="'Services'"
+    innerBannerImage="'assets/images/services-banner.jpg'"></app-inner-banner>
+
+
+<div class="servicesList cmn_gap">
+    <div class="container">
+        <div class="servicesList_inner">
+            <div class="row servicesList_row">
+                @for (service of serviceList; track service.img) {
+                <div class="col-lg-4 servicesList_col">
+                    <app-service-card serviceImg="{{service.img}}"
+                        serviceTitle="{{service.serviceName}}" [hasDescription]=true serviceDescription="{{service.serviceDescription}}"></app-service-card>
+                </div>
+                }
+                
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+.innerBanner{
+    padding-top: 30px;
+    .innerBanner_inner {
+        padding: 100px 0;
+        position: relative;
+        z-index: 1;
+    
+        &::before {
+            position: absolute;
+            content: "";
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, .6);
+            z-index: -1;                                                                                                                 
+        }
+    
+        h1 {
+            font-size: 55px;
+            color: var(--white);
+            text-align: center;
+        }
+    }
+}

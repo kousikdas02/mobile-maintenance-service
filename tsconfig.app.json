@@ -1,0 +1,29 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/app",
+    "types": [
+      "node"
+    ],
+    "paths": {
+      "@shared": ["src/app/client/shared"],
+      "@services": ["src/app/services"],
+      "@authGuard": ["src/app/client/guard"],
+      "@env": ["src/environments/environment"],
+      "@helper": ["src/app/helper"],
+      "@types": [
+        "src/app/client/types"
+      ],
+      "@adminShared": ["src/app/admin/shared"],
+    }
+  },
+  "files": [
+    "src/main.ts",
+    "src/main.server.ts",
+    "server.ts"
+  ],
+  "include": [
+    "src/**/*.d.ts"
+  ]
+}

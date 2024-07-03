@@ -1,0 +1,93 @@
+<!-- <div class="__header">
+  <div class="__menu__pages">
+    <ul>
+      <li>
+        <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
+      </li>
+      <li>
+        <a [routerLink]="['/about']" routerLinkActive="active">About</a>
+      </li>
+      <li>
+        <a [routerLink]="['/contact']" routerLinkActive="active">Contact Us</a>
+      </li>
+    </ul>
+  </div>
+  <div class="__menu__authentication">
+    @if(isLoggedIn()){
+    You are logedin as @if (isLoggedIn()) {<strong style="color: green; font-size: 18px; margin: 0 10px;">
+      {{  user().name}}
+    </strong>
+    <button type="button" (click)="logout()" class="_btnLogin">Logout</button>
+    }
+    }
+ 
+    @if (!isLoggedIn() && pageIsLoaded()) {
+    <button type="button" [routerLink]="['/login']" class="_btnLogin">Login</button>
+    <button type="button" [routerLink]="['/register']" class="_btnRegister">Register</button>
+    }
+  </div>
+</div>
+ -->
+
+
+<header class="header">
+  <div class="topHeader">
+    <div class="container">
+      <div class="topHeader_inner">
+        <div class="topHeader_left">
+          <form class="headerSearch_form">
+            <i class="material-icons searchIcon">search</i>
+            <input type="text" placeholder="Search..." [formControl]="control" [matAutocomplete]="auto"
+              class="example-input">
+            <mat-autocomplete #auto="matAutocomplete">
+              @for (street of filteredStreets | async; track street) {
+              <mat-option [value]="street">{{street}}</mat-option>
+              }
+            </mat-autocomplete>
+          </form>
+        </div>
+        <div class="topHeader_right">
+          <ul>
+            <li>
+              <a href="/login" class="headerLogin_btn">
+                <i class="material-icons">person</i>
+                Login/Register
+              </a>
+            </li>
+            <li>
+              <a href="#url" class="headerCart_btn">
+                <i class="material-icons">shopping_cart</i>
+                <span class="cartItemCount">0</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="botHeader">
+    <div class="container">
+      <div class="botHeader_inner">
+        <div class="headerLogo_wrap">
+          <a href="/home" class="headerLogo">
+            <img src="assets/images/logo.png" alt="">
+          </a>
+        </div>
+        <ul class="botHeader_nav">
+          <li>
+            <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
+          </li>
+          <li>
+            <a [routerLink]="['/about']" routerLinkActive="active">About Us</a>
+          </li>
+          <li>
+            <a [routerLink]="['/services']" routerLinkActive="active">Services</a>
+          </li>
+          <li>
+            <a [routerLink]="['/contact']" routerLinkActive="active">Contact & Hours</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>

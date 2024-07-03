@@ -1,0 +1,31 @@
+ 
+.__form {
+  width: 100%;
+  .__input {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+
+    label {
+      width: 100%;
+      font-size: 15px;
+      color: #444;
+    }
+
+    input {
+      height: 38px;
+    }
+
+    textarea {
+      min-height: 120px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border: solid 2px #444;
+      border-radius: 4px;
+      outline: none;
+    }
+  }
+}
