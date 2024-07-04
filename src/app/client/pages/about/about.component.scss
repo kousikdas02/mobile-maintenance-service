@@ -1,0 +1,28 @@
+.aboutMmmsInfoText{
+    font-size: 18px;
+}
+
+.aboutServiceList{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+
+    li{
+        width: calc(100% / 2);
+        position: relative;
+        padding-left: 30px;
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 10px;
+        &::before{
+            position: absolute;
+            left: 0;
+            top: 0;
+            content: "";
+            width: 20px;
+            height: 20px;
+            background: url(/assets/images/double-tick.svg) no-repeat center center;
+            background-size: 20px;
+        }
+    }
+}

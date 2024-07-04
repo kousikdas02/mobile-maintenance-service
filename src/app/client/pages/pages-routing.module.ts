@@ -7,6 +7,8 @@ import { PagesComponent } from './pages.component';
 import { authGuard } from '../guard';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ServicesComponent } from './services/services.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
 
 const routes: Routes = [
   {
@@ -27,15 +29,28 @@ const routes: Routes = [
       {
         path: 'about',
         component: AboutComponent,
-        canActivate: [authGuard]
+        title: "Mobile Maintenance Services - About Us"
+        // canActivate: [authGuard]
       },
       {
         path: 'services',
-        component: ServicesComponent
+        component: ServicesComponent,
+        title: "Mobile Maintenance Services - Services"
       },
       {
         path: 'contact',
-        component: ContactComponent
+        component: ContactComponent,
+        title: "Mobile Maintenance Services - Contact"
+      },
+      {
+        path: 'privacy-policy',
+        component: PrivacyPolicyComponent,
+        title: "Mobile Maintenance Services - Privacy Policy"
+      },
+      {
+        path: 'terms-conditions',
+        component: TermsConditionsComponent,
+        title: "Mobile Maintenance Services - Terms & Conditions"
       },
       {
         path: 'page-not-found',
