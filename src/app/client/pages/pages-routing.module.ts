@@ -9,6 +9,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ServicesComponent } from './services/services.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
+import { BookingComponent } from './booking/booking.component';
 
 const routes: Routes = [
   {
@@ -51,6 +52,11 @@ const routes: Routes = [
         path: 'terms-conditions',
         component: TermsConditionsComponent,
         title: "Mobile Maintenance Services - Terms & Conditions"
+      },
+      {
+        path: 'booking',
+        component: BookingComponent,
+        title: "Mobile Maintenance Services - Booking"
       },
       {
         path: 'page-not-found',

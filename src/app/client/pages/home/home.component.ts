@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { ServiceCardComponent } from '../../components/service-card/service-card.component';
+import { RouterLink } from '@angular/router';
 
 interface Year {
   value: string;
@@ -36,7 +37,7 @@ interface Engine {
     NgxSkeletonLoaderModule,
     MatIconModule,
     AsyncPipe, JsonPipe,
-    NgOptimizedImage, MatFormFieldModule, MatSelectModule, MatInputModule, FormsModule, SlickCarouselModule, ServiceCardComponent],
+    NgOptimizedImage, MatFormFieldModule, MatSelectModule, MatInputModule, FormsModule, SlickCarouselModule, ServiceCardComponent, RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
   host: {},

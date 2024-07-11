@@ -1,0 +1,102 @@
+<app-inner-banner innerBannerHeading="Booking"
+    innerBannerImage="'assets/images/services-banner.jpg'"></app-inner-banner>
+
+<div class="bookingForm cmn_gap">
+    <div class="container">
+        <div class="cmn_head">
+            <h2>Book a Service</h2>
+            <p>
+                Fill the details to book the service.
+            </p>
+        </div>
+        <div class="bookingForm_wrap">
+
+            <form>
+                <div class="row bookingForm_row">
+                    <div class="col-md-6 bookingForm_col">
+                        <mat-form-field class="bookingForm_field" appearance="outline">
+                            <mat-label>Service</mat-label>
+                            <mat-select [formControl]="service" multiple>
+                                @for (service of serviceList; track service) {
+                                <mat-option [value]="service">{{service}}</mat-option>
+                                }
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6 bookingForm_col">
+                        <mat-form-field class="bookingForm_field" appearance="outline">
+                            <mat-label>Vehicle Year</mat-label>
+                            <mat-select>
+                                @for (year of years; track years) {
+                                <mat-option [value]="year.value">{{year.viewValue}}</mat-option>
+                                }
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6 bookingForm_col">
+                        <mat-form-field class="bookingForm_field" appearance="outline">
+                            <mat-label>Vehicle Manufacturer</mat-label>
+                            <mat-select>
+                                @for (manufacturer of manufacturers; track manufacturers) {
+                                <mat-option [value]="manufacturer.value">{{manufacturer.viewValue}}</mat-option>
+                                }
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6 bookingForm_col">
+                        <mat-form-field class="bookingForm_field" appearance="outline">
+                            <mat-label>Vehicle Model</mat-label>
+                            <mat-select>
+                                @for (model of models; track models) {
+                                <mat-option [value]="model.value">{{model.viewValue}}</mat-option>
+                                }
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6 bookingForm_col">
+                        <mat-form-field class="bookingForm_field" appearance="outline">
+                            <mat-label>Vehicle Engine</mat-label>
+                            <mat-select>
+                                @for (engine of engines; track engines) {
+                                <mat-option [value]="engine.value">{{engine.viewValue}}</mat-option>
+                                }
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6 bookingForm_col">
+                        <mat-form-field class="bookingForm_field" appearance="outline">
+                            <mat-label>Date of Service</mat-label>
+                            <input matInput [matDatepicker]="picker" placeholder="MM/DD/YYYY
+                            ">
+                            <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+                            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6 bookingForm_col">
+                        <mat-form-field class="bookingForm_field" appearance="outline">
+
+                            <mat-label>Chose Location</mat-label>
+                            <input type="text" placeholder="Search" aria-label="Number" matInput
+                            [formControl]="control" [matAutocomplete]="auto">
+                                <mat-autocomplete #auto="matAutocomplete">
+                                    @for (street of filteredStreets | async; track street) {
+                                    <mat-option [value]="street">{{street}}</mat-option>
+                                    }
+                                  </mat-autocomplete>
+
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-12 bookingForm_col">
+                        <p class="bookingPrice"><b>Price:</b> $50</p>
+                    </div>
+                    <div class="col-md-12 bookingForm_col">
+                        <div class="bookingForm_submit">
+                            <button type="submit" class="cmn_btn">Book</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
