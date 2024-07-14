@@ -14,7 +14,7 @@ const routes: Routes = [
   },
   {
     path: 'account',
-    loadChildren: () => import('./pages/pages-routing.module').then(m => m.PagesRoutingModule),
+    loadChildren: () => import('./profile/peofile-routing.module').then(m => m.PagesRoutingModule),
     // canActivate: [authGuard]
   },
 ];

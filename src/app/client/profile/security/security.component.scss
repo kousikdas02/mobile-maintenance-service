@@ -1,0 +1,19 @@
+.pass_input {
+    position: relative;
+  
+    input {
+        padding-right: 40px;
+    }
+  
+    .pass_eye {
+        position: absolute;
+        right: 15px;
+        top: 35%;
+        transform: translateY(-35%);
+        z-index: 1;
+  
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+  }

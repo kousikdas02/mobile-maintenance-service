@@ -1,85 +1,85 @@
 <section class="login_sec">
   <div class="container">
-      <div class="login_wpr">
-          <div class="main_heading">
-              <h2>Create Account</h2>
-          </div>
-          <div class="cmn_form">
-              <form>
-                  <div class="row ls_row">
-                      <div class="col-lg-6 ls_col">
-                          <mat-form-field class="authForm_field" appearance="outline">
-                            <mat-label>First Name</mat-label>
-                            <input matInput placeholder="First Name">
-                          </mat-form-field>
-                      </div>
-                      <div class="col-lg-6 ls_col">
-                          <mat-form-field class="authForm_field" appearance="outline">
-                            <mat-label>Last Name</mat-label>
-                            <input matInput placeholder="Last Name">
-                          </mat-form-field>
-                      </div>
-                      <div class="col-lg-6 ls_col">
-                          <mat-form-field class="authForm_field" appearance="outline">
-                            <mat-label>Phone Number</mat-label>
-                            <input matInput placeholder="Phone Number">
-                          </mat-form-field>
-                      </div>
-                      <div class="col-lg-6 ls_col">
-                          <mat-form-field class="authForm_field" appearance="outline">
-                            <mat-label>Email Address</mat-label>
-                            <input matInput placeholder="Email Address">
-                          </mat-form-field>
-                      </div>
-                      <div class="col-lg-6 ls_col">
-                        <mat-form-field class="authForm_field" appearance="outline">
-                          <mat-label>Date of Birth</mat-label>
-                          <input matInput [matDatepicker]="picker" placeholder="MM/DD/YYYY
+    <div class="login_wpr">
+      <div class="main_heading">
+        <h2>Create Account</h2>
+      </div>
+      <div class="cmn_form">
+        <form>
+          <div class="row ls_row">
+            <div class="col-lg-6 ls_col">
+              <mat-form-field class="authForm_field" appearance="outline">
+                <mat-label>First Name</mat-label>
+                <input matInput placeholder="First Name">
+              </mat-form-field>
+            </div>
+            <div class="col-lg-6 ls_col">
+              <mat-form-field class="authForm_field" appearance="outline">
+                <mat-label>Last Name</mat-label>
+                <input matInput placeholder="Last Name">
+              </mat-form-field>
+            </div>
+            <div class="col-lg-6 ls_col">
+              <mat-form-field class="authForm_field" appearance="outline">
+                <mat-label>Phone Number</mat-label>
+                <input matInput placeholder="Phone Number">
+              </mat-form-field>
+            </div>
+            <div class="col-lg-6 ls_col">
+              <mat-form-field class="authForm_field" appearance="outline">
+                <mat-label>Email Address</mat-label>
+                <input matInput placeholder="Email Address">
+              </mat-form-field>
+            </div>
+            <div class="col-lg-6 ls_col">
+              <mat-form-field class="authForm_field" appearance="outline">
+                <mat-label>Date of Birth</mat-label>
+                <input matInput [matDatepicker]="picker" placeholder="MM/DD/YYYY
                           ">
-                          <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
-                          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-                          <mat-datepicker #picker></mat-datepicker>
-                        </mat-form-field>
-                      </div>
+                <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </div>
 
-                      <div class="col-lg-6 ls_col">
-                        <mat-form-field class="authForm_field" appearance="outline">
-                          <mat-label>Gender</mat-label>
-                          <mat-select>
-                            <mat-option value="Male">Male</mat-option>
-                            <mat-option value="Female">Female</mat-option>
-                            <mat-option value="Other">Others</mat-option>
-                          </mat-select>
-                        </mat-form-field>
-                      </div>
-                      <div class="col-lg-12 ls_col">
-                        <div class="pass_input">
-                          <mat-form-field class="authForm_field" appearance="outline">
-                            <mat-label>Password</mat-label>
-                            <input matInput placeholder="Password" [type]="TypeIndicators.password ? 'password' : 'text'">
-                          </mat-form-field>
-                          <a href="javascript:void(0)" class="pass_eye"
-                              (click)="changePasswordType('password')">
-                              <img [src]="TypeIndicators.password ? 'assets/images/eye.svg' : 'assets/images/eye-slash.svg' "
-                                  alt="">
-                          </a>
-                      </div>
-                      </div>
-                      <div class="col-lg-12 ls_col">
-                        <div class="pass_input">
-                                  
-                          <mat-form-field class="authForm_field" appearance="outline">
-                            <mat-label>Confirm Password</mat-label>
-                            <input matInput placeholder="Confirm Password" [type]="TypeIndicators.confirmPassword ? 'password' : 'text'">
-                          </mat-form-field>
-                      <a href="javascript:void(0)" class="pass_eye"
-                          (click)="changePasswordType('confirmPassword')">
-                          <img [src]="TypeIndicators.confirmPassword ? '../../../assets/images/eye.svg' : '../../../assets/images/eye-slash.svg' "
-                              alt="">
-                      </a>
-                  </div>
-                      </div>
-                      <!-- <div class="col-lg-12 ls_col">
+            <div class="col-lg-6 ls_col">
+              <mat-form-field class="authForm_field" appearance="outline">
+                <mat-label>Gender</mat-label>
+                <mat-select>
+                  <mat-option value="Male">Male</mat-option>
+                  <mat-option value="Female">Female</mat-option>
+                  <mat-option value="Other">Others</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-lg-12 ls_col">
+              <div class="pass_input">
+                <mat-form-field class="authForm_field" appearance="outline">
+                  <mat-label>Password</mat-label>
+                  <input matInput placeholder="Password" [type]="TypeIndicators.password ? 'password' : 'text'">
+                </mat-form-field>
+                <a href="javascript:void(0)" class="pass_eye" (click)="changePasswordType('password')">
+                  <img [src]="TypeIndicators.password ? 'assets/images/eye.svg' : 'assets/images/eye-slash.svg' "
+                    alt="">
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-12 ls_col">
+              <div class="pass_input">
+
+                <mat-form-field class="authForm_field" appearance="outline">
+                  <mat-label>Confirm Password</mat-label>
+                  <input matInput placeholder="Confirm Password"
+                    [type]="TypeIndicators.confirmPassword ? 'password' : 'text'">
+                </mat-form-field>
+                <a href="javascript:void(0)" class="pass_eye" (click)="changePasswordType('confirmPassword')">
+                  <img
+                    [src]="TypeIndicators.confirmPassword ? '../../../assets/images/eye.svg' : '../../../assets/images/eye-slash.svg' "
+                    alt="">
+                </a>
+              </div>
+            </div>
+            <!-- <div class="col-lg-12 ls_col">
                           <div class="rem_for">
                               <div class="ls_rem">
                                   <mat-slide-toggle>Remember Me</mat-slide-toggle>
@@ -90,26 +90,27 @@
                           </div>
                       </div> -->
 
-                      <div class="col-lg-12 ls_col ">
-                        <div class="termsCheckbox_wrap">
-                          <mat-checkbox >I have read, understood and agree to the Mobile Maintenance Services <a href="#"> terms and conditions</a>.</mat-checkbox>
-                        </div>
-                      </div>
-
-                      <div class="col-lg-12 ls_col">
-                        <div class="authSubmit_btn">
-                          <button type="submit" class="cmn_btn">Register</button>
-                      </div>
-                      </div>
-
-
-                  </div>
-              </form>
-              <div class="have_acc">
-                  <p>Have an Account? <a routerLink="/login">Log In</a></p>
+            <div class="col-lg-12 ls_col ">
+              <div class="termsCheckbox_wrap">
+                <mat-checkbox>I have read, understood and agree to the Mobile Maintenance Services <a href="#"> terms
+                    and conditions</a>.</mat-checkbox>
               </div>
-          </div>
+            </div>
 
+            <div class="col-lg-12 ls_col">
+              <div class="authSubmit_btn">
+                <button type="submit" class="cmn_btn">Register</button>
+              </div>
+            </div>
+
+
+          </div>
+        </form>
+        <div class="have_acc">
+          <p>Have an Account? <a routerLink="/login">Log In</a></p>
+        </div>
       </div>
+
+    </div>
   </div>
 </section>

@@ -1,0 +1,75 @@
+.billingCard{
+    box-shadow: 0 0.15rem 1.75rem 0 rgb(33 40 50 / 15%);
+    .billingCard_header{
+        padding: 1rem 1.35rem;
+        margin-bottom: 0;
+        background-color: rgba(33, 40, 50, 0.03);
+        border-bottom: 1px solid rgba(33, 40, 50, 0.125);
+
+        &.paymentMethod_header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .paymentMethod_btn{
+            padding: 10px 15px;
+        }
+    }
+
+    .billingCard_wrap{
+        padding: 1rem 1rem;
+
+        hr{
+            margin: 1rem 0;
+        }
+
+        .billingCard_each{
+            display: flex;
+            justify-content: space-between;
+
+            .card_img{
+                img{
+                    width: 40px;
+                }
+            }
+            .cardSmallText{
+                font-size: 16px;
+            }
+            .cardTextMuted{
+                font-size: 16px;
+            }
+            .cardEdit{
+                display: flex;
+                align-items: center;
+            }
+            a{
+                color: var(--primary-color);
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .paymentStatus{
+            display: inline-block;
+            padding: 7px 10px;
+            color: var(--black);
+            border-radius: 5px;
+            font-size: 14px;
+            &.yellow{
+                background-color: #ffff00;
+            }
+            &.green{
+                background-color: #008000;
+                color: var(--white);
+
+            }
+        }
+        .invoiceDownloadBtn{
+            padding: 10px 15px;
+            font-size: 14px;
+        }
+    }
+}
+
+

@@ -1,4 +1,3 @@
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
@@ -21,13 +20,10 @@ $angular-latest-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$angular-latest-theme: mat.define-light-theme((
-  color: (
-    primary: $angular-latest-primary,
-    accent: $angular-latest-accent,
-    warn: $angular-latest-warn,
-  )
-));
+$angular-latest-theme: mat.define-light-theme((color: (primary: $angular-latest-primary,
+        accent: $angular-latest-accent,
+        warn: $angular-latest-warn,
+      )));
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
@@ -41,10 +37,10 @@ $angular-latest-theme: mat.define-light-theme((
   font-family: 'upboltersregular';
   src: url('assets/fonts/upbolters-webfont.eot');
   src: url('assets/fonts/upbolters-webfont.eot?#iefix') format('embedded-opentype'),
-       url('assets/fonts/upbolters-webfont.woff2') format('woff2'),
-       url('assets/fonts/upbolters-webfont.woff') format('woff'),
-       url('assets/fonts/upbolters-webfont.ttf') format('truetype'),
-       url('assets/fonts/upbolters-webfont.svg#upboltersregular') format('svg');
+    url('assets/fonts/upbolters-webfont.woff2') format('woff2'),
+    url('assets/fonts/upbolters-webfont.woff') format('woff'),
+    url('assets/fonts/upbolters-webfont.ttf') format('truetype'),
+    url('assets/fonts/upbolters-webfont.svg#upboltersregular') format('svg');
   font-weight: normal;
   font-style: normal;
 
@@ -56,14 +52,19 @@ $angular-latest-theme: mat.define-light-theme((
   --white: #fff;
   --btn-hover: rgb(114, 1, 22);
 }
+
 * {
   box-sizing: border-box;
 }
 
-html, body { height: 100%; }
-body { 
+html,
+body {
+  height: 100%;
+}
+
+body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif; 
+  font-family: Roboto, "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
@@ -209,7 +210,7 @@ button {
   border: 0;
   transition: 0.3s all ease;
   cursor: pointer;
-  font-family: Roboto, "Helvetica Neue", sans-serif; 
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 
@@ -236,7 +237,7 @@ select {
   font-size: 16px;
   border-radius: 0;
   border: 1px solid #A0BAE0;
-  font-family: Roboto, "Helvetica Neue", sans-serif; 
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 
 
   &.error {
@@ -263,7 +264,7 @@ textarea {
   border-radius: 10px;
   border: 1px solid #A0BAE0;
   resize: none;
-  font-family: Roboto, "Helvetica Neue", sans-serif; 
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 
   &.error {
     border-color: #ff0000 !important;
@@ -311,7 +312,7 @@ input[type="submit"] {
   outline: none !important;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  font-family: Roboto, "Helvetica Neue", sans-serif; 
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 input[type="submit"]:hover {
@@ -355,35 +356,38 @@ figure {
 }
 
 // common style
-.cmn_btn{
+.cmn_btn {
   background: var(--primary-color);
   color: #fff;
   padding: 15px 25px;
   font-size: 16px;
   font-weight: 500;
 
-  &:hover{
+  &:hover {
     background: var(--btn-hover);
     color: var(--white);
   }
 }
 
-.cmn_gap{
+.cmn_gap {
   padding: 60px 0;
 }
 
-.cmn_head{
+.cmn_head {
   margin-bottom: 30px;
-  h2{
+
+  h2 {
     text-align: center;
     font-family: 'upboltersregular';
     font-weight: normal;
     margin-bottom: 5px;
-    &:last-child{
+
+    &:last-child {
       margin-bottom: 0;
     }
   }
-  p{
+
+  p {
     text-align: center;
     font-size: 20px;
     font-weight: 500;
@@ -394,36 +398,44 @@ figure {
 }
 
 // slick global style
-.slick-prev:before, .slick-next:before{
+.slick-prev:before,
+.slick-next:before {
   color: var(--primary-color);
   font-size: 30px;
 }
-.slick-prev, .slick-next{
+
+.slick-prev,
+.slick-next {
   height: 30px;
   width: 30px;
 }
+
 .slick-prev {
   left: -50px;
 }
+
 .slick-next {
   right: -50px;
 }
 
-.featuredService_slider{
-  .slick-slider{
+.featuredService_slider {
+  .slick-slider {
     display: flex;
   }
-  .slick-slide{
+
+  .slick-slide {
     padding: 15px 15px;
     height: auto;
-    
+
   }
+
   .slick-list {
     margin: 0 -15px;
   }
-  .slick-track{
+
+  .slick-track {
     display: flex !important;
-    
+
   }
 
 
@@ -431,33 +443,66 @@ figure {
 
 
 // auth forms
-.authForm_field{
+.authForm_field {
   width: 100%;
 }
 
-.authSubmit_btn{
+.authSubmit_btn {
   text-align: center;
-  .cmn_btn{
+
+  .cmn_btn {
     min-width: 150px;
   }
 }
 
-.rem_for{
-  .mdc-switch__ripple{
+.rem_for {
+  .mdc-switch__ripple {
     display: none;
   }
 }
 
-.termsCheckbox_wrap{
-  .mdc-checkbox__ripple{
+.termsCheckbox_wrap {
+  .mdc-checkbox__ripple {
     display: none;
   }
 }
 
 
 // privacy plocy and terms condition page common style
-.policy-terms{
-  h4{
+.policy-terms {
+  h4 {
     margin-bottom: 10px;
+  }
+}
+
+// responsive table
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: var(--black);
+  vertical-align: top;
+  border-color: #dee2e6;
+  caption-side: bottom;
+  border-collapse: collapse;
+
+  >:not(caption)>*>* {
+    padding: 1rem 1rem;
+    background-color: var(--bs-table-bg);
+    border-bottom-width: 1px;
+    box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
+    
+  }
+  td, th{
+    text-align: center;
+  }
+  thead{
+    th{
+      border-bottom: 1px solid var(--black);
+    }
   }
 }

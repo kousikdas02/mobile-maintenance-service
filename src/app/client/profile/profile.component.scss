@@ -1,0 +1,112 @@
+.profileWrapper {
+    .profileWrapper_row {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -20px;
+
+        >* {
+            padding: 0 20px;
+        }
+
+        .profileSideBar {
+            width: 25%;
+            flex: 0 0 auto;
+
+            .profileSideBar_menu {
+                -webkit-box-shadow: 7px 8px 20px 11px rgba(0, 0, 0, 0.05);
+                -moz-box-shadow: 7px 8px 20px 11px rgba(0, 0, 0, 0.05);
+                box-shadow: 7px 8px 20px 11px rgba(0, 0, 0, 0.05);
+                height: 100%;
+                padding: 20px 0;
+
+                .profileBackBtnWrap {
+                    border-bottom: 1px solid var(--black);
+                    padding: 0 0 15px 20px;
+
+                    .profileBackBtn {
+                        display: flex;
+                        align-items: center;
+                        color: var(--black);
+
+                        &:hover {
+                            color: var(--primary-color);
+
+                            span {
+                                svg {
+                                    path {
+                                        fill: var(--primary-color);
+                                    }
+                                }
+                            }
+                        }
+
+                        span {
+                            display: flex;
+                            margin-right: 10px;
+
+                            svg {
+                                path {
+                                    -webkit-transition: all 0.3s ease-in-out;
+                                    -moz-transition: all 0.3s ease-in-out;
+                                    -ms-transition: all 0.3s ease-in-out;
+                                    -o-transition: all 0.3s ease-in-out;
+                                    transition: all 0.3s ease-in-out;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                ul {
+                    li {
+                        a {
+                            padding: 15px 20px;
+                            color: var(--black);
+                            width: 100%;
+
+                            &:hover, &.active {
+                                color: var(--white);
+                                background: var(--primary-color);
+
+                                span {
+                                    svg {
+                                        path {
+                                            fill: var(--white);
+                                        }
+                                    }
+                                }
+                            }
+
+                            span {
+                                display: inline-block;
+                                margin-right: 10px;
+
+                                svg {
+
+                                    path {
+                                        fill: var(--black);
+                                        -webkit-transition: all 0.3s ease-in-out;
+                                        -moz-transition: all 0.3s ease-in-out;
+                                        -ms-transition: all 0.3s ease-in-out;
+                                        -o-transition: all 0.3s ease-in-out;
+                                        transition: all 0.3s ease-in-out;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .profileRightMain {
+            width: 75%;
+            flex: 0 0 auto;
+
+            .profileRightCmn {}
+
+        }
+    }
+
+
+}
