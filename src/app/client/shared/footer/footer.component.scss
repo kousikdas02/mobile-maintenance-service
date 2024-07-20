@@ -20,8 +20,8 @@
                 width: 100%;
             }
             @media(max-width: 1199px) {
-                width: 150px;
-                margin-bottom: 15px;
+                width: 120px;
+                margin-bottom: 10px;
             }
         }
 
@@ -86,6 +86,7 @@
 
             @media(max-width: 991px) {
                 font-size: 18px;
+                margin-bottom: 10px;
             }
         }
 
@@ -167,15 +168,16 @@
         .ftinner_row {
             display: flex;
             flex-wrap: wrap;
-            margin: 0 -15px;
+            margin: 0 -15px -30px;
 
             @media(max-width: 991px) {
-                margin: 0 -12px;
+                margin: 0 -12px -30px;
             }
 
             .ftinner_col {
                 flex: 0 0 auto;
                 padding: 0 15px;
+                margin-bottom: 30px;
 
                 @media(max-width: 991px) {
                     padding: 0 12px;
@@ -185,13 +187,12 @@
             .ftinner_col_logo {
                 width: 34%;
 
-                @media(max-width: 991px) {
-                    width: 36%;
+                @media(max-width: 1199px) {
+                    width: 30%;
                 }
 
-                @media(max-width: 767px) {
+                @media (max-width: 767px) {
                     width: 100%;
-                    margin-bottom: 20px;
                 }
 
                 p {
@@ -207,7 +208,6 @@
 
                     @media(max-width: 767px) {
                         max-width: 100%;
-                        margin-bottom: 15px;
                     }
                 }
             }
@@ -215,48 +215,42 @@
             .ftinner_col_quciklinks {
                 width: 24%;
 
-                @media(max-width: 991px) {
-                    width: 20%;
+                @media(max-width: 1199px) {
+                    width: 22%;
                 }
 
-                @media(max-width: 767px) {
-                    width: 32%;
-                }
-
-                @media(max-width: 479px) {
+                @media (max-width: 767px) {
                     width: 50%;
-                    margin-bottom: 20px;
                 }
+
+                
             }
 
             .ftinner_col_company {
                 width: 24%;
 
-                @media(max-width: 767px) {
-                    width: 40%;
+                @media(max-width: 1199px) {
+                    width: 22%;
                 }
 
-                @media(max-width: 479px) {
+                @media (max-width: 767px) {
                     width: 50%;
-                    margin-bottom: 20px;
                 }
+                
 
             }
 
             .ftinner_col_follow {
                 width: 18%;
 
-                @media(max-width: 991px) {
-                    width: 20%;
+                @media(max-width: 1199px) {
+                    width: 26%;
                 }
 
-                @media(max-width: 767px) {
-                    width: 27%;
-                }
-
-                @media(max-width: 479px) {
+                @media (max-width: 767px) {
                     width: 50%;
                 }
+                
             }
 
         }

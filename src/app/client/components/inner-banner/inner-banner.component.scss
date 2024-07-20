@@ -4,6 +4,14 @@
         padding: 100px 0;
         position: relative;
         z-index: 1;
+
+        @media (max-width: 991px) {
+            padding: 80px 0;
+        }
+
+        @media (max-width: 767px) {
+            padding: 60px 0;
+        }
     
         &::before {
             position: absolute;
@@ -20,6 +28,13 @@
             font-size: 55px;
             color: var(--white);
             text-align: center;
+
+            @media (max-width: 991px) {
+                font-size: 43px;
+            }
+            @media (max-width: 767px) {
+                font-size: 40px;
+            }
         }
     }
 }

@@ -19,13 +19,7 @@
                 <input matInput placeholder="Last Name">
               </mat-form-field>
             </div>
-            <div class="col-lg-6 ls_col">
-              <mat-form-field class="authForm_field" appearance="outline">
-                <mat-label>Phone Number</mat-label>
-                <input matInput placeholder="Phone Number">
-              </mat-form-field>
-            </div>
-            <div class="col-lg-6 ls_col">
+            <div class="col-lg-12 ls_col">
               <mat-form-field class="authForm_field" appearance="outline">
                 <mat-label>Email Address</mat-label>
                 <input matInput placeholder="Email Address">
@@ -33,14 +27,20 @@
             </div>
             <div class="col-lg-6 ls_col">
               <mat-form-field class="authForm_field" appearance="outline">
+                <mat-label>Phone Number</mat-label>
+                <input matInput placeholder="Phone Number">
+              </mat-form-field>
+            </div>
+            
+            <!-- <div class="col-lg-6 ls_col">
+              <mat-form-field class="authForm_field" appearance="outline">
                 <mat-label>Date of Birth</mat-label>
                 <input matInput [matDatepicker]="picker" placeholder="MM/DD/YYYY
                           ">
-                <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
                 <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
               </mat-form-field>
-            </div>
+            </div> -->
 
             <div class="col-lg-6 ls_col">
               <mat-form-field class="authForm_field" appearance="outline">

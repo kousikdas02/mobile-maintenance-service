@@ -1,5 +1,5 @@
 import { Component, Input, Signal, WritableSignal, afterNextRender, effect, inject, signal } from '@angular/core';
-import { AsyncPipe, CommonModule } from '@angular/common';
+import { AsyncPipe, CommonModule, NgClass } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatInputModule} from '@angular/material/input';
@@ -20,7 +20,7 @@ import { Observable, map, startWith } from 'rxjs';
     MatInputModule,
     MatAutocompleteModule,
     ReactiveFormsModule,
-    AsyncPipe,
+    AsyncPipe,NgClass
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
@@ -65,6 +65,28 @@ export class HeaderComponent {
 
   private _normalizeValue(value: string): string {
     return value.toLowerCase().replace(/\s/g, '');
+  }
+
+
+  // nav button click
+  navStatus: boolean = false;
+  navBtnClick(){
+      this.navStatus = !this.navStatus;       
+      this.openSearchBarStatus = false;
+  }
+
+  navBtnCloseClick(){
+    this.navStatus = false;
+  }
+
+  // search bar mobile
+  openSearchBarStatus: boolean = false;
+  openSearchMobileClick(){
+    this.openSearchBarStatus = true;
+  }
+
+  closeSearchMobileClick(){
+    this.openSearchBarStatus = false;
   }
 }
 

@@ -34,7 +34,13 @@
   <div class="topHeader">
     <div class="container">
       <div class="topHeader_inner">
-        <div class="topHeader_left">
+        <div class="openSearchMobile">
+          <button class="openSearchMobileBtn" (click)="openSearchMobileClick()">
+            <i class="material-icons searchIcon">search</i>
+          </button>
+        </div>
+        <div class="topHeader_left" [ngClass]="openSearchBarStatus ? 'openSearch' : ''">
+          
           <form class="headerSearch_form">
             <i class="material-icons searchIcon">search</i>
             <input type="text" placeholder="Search..." [formControl]="control" [matAutocomplete]="auto"
@@ -45,6 +51,9 @@
               }
             </mat-autocomplete>
           </form>
+          <button class="closeSearch" (click)="closeSearchMobileClick()">
+            <i class="material-icons">close</i>
+          </button>
         </div>
         <div class="topHeader_right">
           <ul>
@@ -73,21 +82,30 @@
             <img src="assets/images/logo.png" alt="">
           </a>
         </div>
-        <ul class="botHeader_nav">
-          <li>
-            <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
-          </li>
-          <li>
-            <a [routerLink]="['/about']" routerLinkActive="active">About Us</a>
-          </li>
-          <li>
-            <a [routerLink]="['/services']" routerLinkActive="active">Services</a>
-          </li>
-          <li>
-            <a [routerLink]="['/contact']" routerLinkActive="active">Contact & Hours</a>
-          </li>
-        </ul>
+        <button class="navbarOpenBtn" (click)="navBtnClick()">
+          <span class="stick" [ngClass]="navStatus ? 'open' : ''"></span>
+        </button>
+        <div class="botHeader_nav_wrap" [ngClass]="navStatus ? 'show' : ''">
+          <button class="navbarCloseBtn" (click)="navBtnCloseClick()">
+            <span class="stick" [ngClass]="navStatus ? 'open' : ''"></span>
+          </button>
+          <ul class="botHeader_nav">
+            <li>
+              <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
+            </li>
+            <li>
+              <a [routerLink]="['/about']" routerLinkActive="active">About Us</a>
+            </li>
+            <li>
+              <a [routerLink]="['/services']" routerLinkActive="active">Services</a>
+            </li>
+            <li>
+              <a [routerLink]="['/contact']" routerLinkActive="active">Contact & Hours</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
+  <div class="navOverlay" id="navOverlay" [ngClass]="navStatus ? 'open' : ''" (click)="navBtnCloseClick()"></div>
 </header>

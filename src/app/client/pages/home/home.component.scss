@@ -11,6 +11,13 @@
       font-family: "Poppins", sans-serif;
       font-weight: 600;
       text-transform: uppercase;
+
+      @media (max-width: 1024px) {
+        font-size: 28px;
+      }
+      @media (max-width: 767px) {
+        font-size: 23px;
+      }
     }
   }
 }
@@ -31,6 +38,21 @@
       width: 100%;
       background: rgba(0, 0, 0, .4);
       z-index: -1;
+    }
+
+    @media (max-width: 767px) {
+      padding: 30px 20px;
+    }
+
+    .homeBanner_bot_row{
+      @media (max-width: 991px) {
+        flex-direction: column-reverse;
+        margin-bottom: -30px;
+
+        .homeBanner_bot_col{
+          margin-bottom: 30px;
+        }
+      }
     }
   }
 
@@ -70,6 +92,10 @@
     align-items: center;
     height: 100%;
 
+    @media (max-width: 991px) {
+      justify-content: initial;
+    }
+
     h2 {
       color: var(--white);
       font-family: 'upboltersregular';
@@ -86,6 +112,10 @@
   .viewService_btnWrap {
     text-align: center;
     padding-top: 30px;
+
+    @media (max-width: 767px) {
+      padding-top: 20px;
+    }
   }
 
 }
@@ -98,6 +128,10 @@
   margin: 0 auto;
   border-radius: 15px;
 
+  @media (max-width: 1024px) {
+    max-width: 100%;
+  }
+
   .homeContactForm_field {
     width: 100%;
   }
@@ -107,6 +141,16 @@
 
     .cmn_btn {
       min-width: 200px;
+    }
+  }
+}
+
+.homeContact_inner{
+  p{
+    @media (max-width: 767px) {
+      br{
+        display: none;
+      }
     }
   }
 }
