@@ -2,9 +2,17 @@
 
 <div class="profileWrapper cmn_gap">
     <div class="container">
-
+        <div class="profileMenu_mobile">
+            <button class="cmn_btn" (click)="navBtnClick()">
+               
+                Profile Menu
+            </button>
+        </div>
         <div class="profileWrapper_row">
-            <div class="profileSideBar">
+            <div class="profileSideBar" [ngClass]="navStatus ? 'show' : ''">
+                <button class="sidebarCloseBtn" (click)="navBtnCloseClick()">
+                    <span class="stick" [ngClass]="navStatus ? 'open' : ''"></span>
+                  </button>
                 <div class="profileSideBar_menu">
                     <div class="profileBackBtnWrap">
                         <a class="profileBackBtn" href="/home">
@@ -89,4 +97,6 @@
         </div>
     </div>
 </div>
+
+<div class="navOverlay" id="profileMenuOverlay" [ngClass]="navStatus ? 'open' : ''" (click)="navBtnCloseClick()"></div>
 <app-footer></app-footer>
