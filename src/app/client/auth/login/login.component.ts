@@ -1,9 +1,10 @@
 import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { EventService, StorageService } from '@services';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatInputModule } from '@angular/material/input';
+import { ApiService } from '@services'
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -12,35 +13,65 @@ import { MatInputModule } from '@angular/material/input';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
+  loginForm: FormGroup = new FormGroup({});
 
-  form!: FormGroup
-  private event = inject(EventService);
-  private storage = inject(StorageService);
-  private router = inject(Router);
-  protected credentials: { name: string } = { name: '' }
-
-  constructor() {
+  constructor(private _formBuilder: FormBuilder,
+    private _apiService: ApiService,
+    private _router: Router,
+    private _event: EventService,
+    private _storage: StorageService) {
     this.formInit();
   }
-
-
-
-  protected submitHandle(form: FormGroup): void {
-    if (form.valid) {
-
-      this.event.isLoggedIn.set(true);
-      this.event.user.set({ name: form.value.name });
-      this.storage.setUser({ token: 'MY TOKEN', name: form.value.name });
-      this.router.navigate(['/home'])
-    } else {
-      form instanceof FormGroup && form.markAllAsTouched();
-    }
+  private formInit(): void {
+    this.loginForm = this._formBuilder.group({
+      email: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required]),
+    });
   }
 
-  private formInit(): void {
-    this.form = new FormGroup({
-      name: new FormControl('', [Validators.required])
+
+
+  login(): void {
+    if (this.loginForm.invalid) {
+      this.loginForm.markAllAsTouched();
+      return
+    }
+    this._apiService.post('auth/signin', this.loginForm.value).subscribe({
+      next: (resp: any) => {
+        this._apiService.alert('Successfully logged in.', 'success');
+        this._event.isLoggedIn.set(true);
+        const userObj = {
+          _id: resp._id,
+          firstName: resp.firstName,
+          lastName: resp.lastName,
+          email: resp.email,
+          phone: resp.phone,
+          gender: resp.gender,
+          createdAt: resp.createdAt,
+          updatedAt: resp.updatedAt,
+        }
+        this._event.user.set(userObj);
+        this._storage.setUser({
+          ...userObj, accessToken: resp.token,
+        });
+        this._router.navigate(['/home'])
+      },
+      error: (err: any) => {
+        this._apiService.alert(err.message, 'error')
+      }
     })
+
+
+
+  }
+
+
+  TypeIndicators: any = {
+    password: true,
+    confirmPassword: true
+  }
+  changePasswordType(field: string) {
+    this.TypeIndicators[field] = !this.TypeIndicators[field]
   }
 
 }

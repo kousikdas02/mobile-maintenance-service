@@ -7,7 +7,6 @@ import bootstrap from './src/main.server';
 import 'dotenv/config'
 import cors from 'cors';
 import compression from 'compression';
-import apiRoutes from './api/route/route';
 import { REQUEST, RESPONSE } from 'src/express.tokens';
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
@@ -21,7 +20,6 @@ export function app(): express.Express {
   server.use(compression());
   server.set('view engine', 'html');
   server.set('views', browserDistFolder);
-  server.use(apiRoutes);
 
   // Example Express Rest API endpoints
   // server.get('/api/**', (req, res) => { });

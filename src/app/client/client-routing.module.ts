@@ -6,7 +6,7 @@ import { authGuard } from './guard/auth.guard';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./pages/pages-routing.module').then(m => m.PagesRoutingModule)
+    loadChildren: () => import('./pages/pages-routing.module').then(m => m.PagesRoutingModule),
   },
   {
     path: '',
@@ -14,8 +14,8 @@ const routes: Routes = [
   },
   {
     path: 'account',
-    loadChildren: () => import('./profile/peofile-routing.module').then(m => m.PagesRoutingModule),
-    // canActivate: [authGuard]
+    loadChildren: () => import('./profile/peofile-routing.module').then(m => m.ProfileRoutingModule),
+    canActivate: [authGuard]
   },
 ];
 

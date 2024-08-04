@@ -1,9 +1,10 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable, Signal, effect, inject, signal } from '@angular/core';
-import {  catchError, throwError } from 'rxjs';
+import { catchError, throwError } from 'rxjs';
 import { environment } from '@env';
 import { StorageService } from './storage.service';
 import { EventService } from './event.service';
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
@@ -37,13 +38,8 @@ export class ApiService {
   }
 
   get(path: string, params: object = {}): any {
-    // return this.http.get(`${this.API_URL}${path}`).pipe(catchError(this.formatErrors));
-    return this.http.get(`${this.API_URL}${path}`, { headers: this.httpOptions().headers, params: { ...params } }).pipe(catchError(this.formatErrors))
-    // return this.http.get(`${this.API_URL}${path}`, { headers: this.httpOptions.headers, params: {...params} }).pipe(catchError(this.formatErrors))
-
+    return this.http.get(`${this.API_URL}${path}`, { headers: this.httpOptions().headers, params: { ...params } }).pipe(catchError(this.formatErrors));
   }
-
-
 
   post(path: any, body: object = {}) {
     return this.http.post(`${this.API_URL}${path}`, body, { headers: this.httpOptions().headers }).pipe(catchError(this.formatErrors));
@@ -63,5 +59,65 @@ export class ApiService {
 
   private formatErrors(error: any) {
     return throwError(() => error);
+  }
+
+
+   // SHOW ALERT AS A TOSATER WHEN REQUIRED
+   alert(message: string, type: any, duraion?: number) {
+    return Swal.fire({
+      title: message,
+      icon: type,
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: duraion ? duraion : 2000,
+      timerProgressBar: true,
+    });
+  }
+  // SHOW ALERT AS A POPUP WHEN REQUIRED
+  alertModal(msg: string, message: string, type: any, CancelButton = false, isIcon?: boolean, btn?: string) {
+    if (btn) {
+      return Swal.fire({
+        title: msg,
+        text: message,
+        icon: isIcon ? type : null,
+        showConfirmButton: true,
+        showCancelButton: CancelButton,
+        confirmButtonText: btn,
+      });
+
+    } else {
+      return Swal.fire({
+        title: msg,
+        text: message,
+        icon: isIcon ? type : null,
+        showConfirmButton: true,
+        showCancelButton: CancelButton,
+        confirmButtonText: 'Delete',
+      });
+    }
+  }
+  // alert modal
+  async alertConfirmation(title?: any, confirmButtonText?: any): Promise<boolean> {
+    let flag = false;
+    await Swal.fire({
+      title: title ? title : 'Are you sure?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#EB4846',
+      // cancelButtonColor: '#d33',
+      confirmButtonText: confirmButtonText ? confirmButtonText : 'Confirm',
+      cancelButtonText: 'Cancel',
+      reverseButtons: true
+    }).then((result: any) => {
+      if (result && result.value) {
+        flag = true;
+      } else {
+        flag = false;
+      }
+    });
+    return new Promise((resolve, reject) => {
+      resolve(flag);
+    });
   }
 }
